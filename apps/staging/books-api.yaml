@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: books-api-staging-oci
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: oci://ghcr.io/parraletz/charts/books-api
+      targetRevision: 1.0.0
+      chart: books-api
+      path: .
+      helm:
+        valuesFiles:
+          - $values/books/api/values-staging.yaml
+    - repoURL: git@github.com:parraletz/gitops-cf.git
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: books-api-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
