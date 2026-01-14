@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: books-apps-bootstrap
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/background
+  labels:
+    name: books-apps-bootstrap
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:parraletz/gitops-cf.git
+    targetRevision: HEAD
+    path: apps/staging
+    kustomize:
+      version: v3.5.4
+      namePrefix: staging-
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
