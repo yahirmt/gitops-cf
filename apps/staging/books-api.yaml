@@ -11,6 +11,7 @@ spec:
       chart: books-api
       path: .
       helm:
+        releaseName: books-api
         valuesFiles:
           - $values/books/api/values-staging.yaml
     - repoURL: git@github.com:parraletz/gitops-cf.git
