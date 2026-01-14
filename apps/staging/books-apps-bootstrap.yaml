@@ -11,10 +11,9 @@ spec:
   project: default
   source:
     repoURL: git@github.com:parraletz/gitops-cf.git
-    targetRevision: HEAD
+    targetRevision: main
     path: apps/staging
     kustomize:
-      version: v3.5.4
       namePrefix: staging-
   destination:
     server: https://kubernetes.default.svc
