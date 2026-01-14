@@ -1,3 +1,4 @@
 namespace: argocd
 resources:
   - ./books-api.yaml
+  - ./books-apps-bootstrap.yaml
