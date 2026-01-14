@@ -13,8 +13,6 @@ spec:
     repoURL: git@github.com:parraletz/gitops-cf.git
     targetRevision: main
     path: apps/staging
-    kustomize:
-      namePrefix: staging-
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
