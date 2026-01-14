@@ -16,8 +16,8 @@ spec:
           image:
             tag: 3.1.0
             repository: ghcr.io/parraletz/books-api
-        valuesFiles:
-          - $values/books/api/values-staging.yaml
+        # valuesFiles:
+        #   - $values/books/api/values-staging.yaml
     - repoURL: git@github.com:parraletz/gitops-cf.git
       targetRevision: main
       ref: values
