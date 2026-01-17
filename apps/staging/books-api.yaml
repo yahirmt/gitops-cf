@@ -6,19 +6,19 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: oci://ghcr.io/parraletz/charts/books-api
-      targetRevision: '3.2.0'
+    - repoURL: oci://ghcr.io/yahirmt/charts/books-api
+      targetRevision: '1.0.0'
       chart: books-api
       path: .
       helm:
         releaseName: books-api
         valuesObject:
           image:
-            tag: '3.2.0'
-            repository: ghcr.io/parraletz/books-api
+            tag: '1.0.0'
+            repository: ghcr.io/yahirmt/books-api
             # valuesFiles:
             #   - $values/books/api/values-staging.yaml
-    - repoURL: git@github.com:parraletz/gitops-cf.git
+    - repoURL: git@github.com:yahirmt/gitops-cf.git
       targetRevision: main
       ref: values
   destination:
