@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:parraletz/gitops-cf.git
+    repoURL: git@github.com:yahirmt/gitops-cf.git
     targetRevision: main
     path: apps/staging
   destination:
